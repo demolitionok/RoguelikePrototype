@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 2099624962}
   - component: {fileID: 2099624961}
   - component: {fileID: 2099624964}
+  - component: {fileID: 2099624965}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -197,7 +198,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -259,6 +260,41 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &2099624965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099624960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc7f4c7b1cc21c49a33172f837bd345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7519033924651809657}
+  smoothing: 0.05
+  offset: {x: 0, y: 0, z: -10}
+--- !u!1 &394268952448631960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5351765019807935713, guid: 9756c6c8e9e88ce41b047403f9294737,
+    type: 3}
+  m_PrefabInstance: {fileID: 5709984248277624953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &394268952448631965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394268952448631960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14acd2a40fe54dc468f49100c83f0037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
 --- !u!1001 &5709984248277624953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,6 +361,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Test Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351765019807935714, guid: 9756c6c8e9e88ce41b047403f9294737,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9756c6c8e9e88ce41b047403f9294737, type: 3}
@@ -417,6 +458,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0834f4765821a14f92f1878b1a2e3b2, type: 3}
+--- !u!4 &7519033924651809657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7519033923809461681, guid: e0834f4765821a14f92f1878b1a2e3b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7519033924651809656}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8507165815680569277
 PrefabInstance:
   m_ObjectHideFlags: 0
