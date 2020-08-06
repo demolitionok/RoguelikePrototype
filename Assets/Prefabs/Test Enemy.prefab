@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 5351765019807935714}
   - component: {fileID: 5351765019807935715}
   - component: {fileID: 5351765019807935717}
+  - component: {fileID: 394268952448631965}
+  - component: {fileID: 3255638523989052231}
   m_Layer: 0
-  m_Name: Player (1)
-  m_TagString: Untagged
+  m_Name: Test Enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +45,7 @@ Animator:
   m_GameObject: {fileID: 5351765019807935713}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 320fcd3b20a67f048b563168eacc2be4, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -129,3 +131,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &394268952448631965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351765019807935713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14acd2a40fe54dc468f49100c83f0037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
+--- !u!114 &3255638523989052231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351765019807935713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101927b4abd90be4fa0a8eee41a8196c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 8731607031511845993, guid: d92767a95ba375e46ae5008689eee19f,
+    type: 3}
+  player: {fileID: 0}
+  minDamage: 1
+  maxDamage: 2
+  projectileForce: 2
+  cooldown: 2
