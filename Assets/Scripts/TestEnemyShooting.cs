@@ -5,13 +5,14 @@ using UnityEngine;
 public class TestEnemyShooting : MonoBehaviour
 {
     public GameObject projectile;
-    public Transform player;
+    public GameObject player;
     public float minDamage;
     public float maxDamage;
     public float projectileForce;
     public float cooldown;
     void Start()
     {
+        player = FindObjectOfType<PlayerMovement>().gameObject;
         StartCoroutine(ShootPlayer());
     }
 
@@ -21,7 +22,7 @@ public class TestEnemyShooting : MonoBehaviour
         if (player != null) 
         {
             GameObject spell = Instantiate(projectile, transform.position, Quaternion.identity);
-            Vector2 targetPos = player.position;
+            Vector2 targetPos = player.transform.position;
             Vector2 direction = (targetPos - (Vector2)transform.position).normalized;
             spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
             spell.GetComponent<TestEnemyProjectile>().damage = Random.Range(minDamage, maxDamage);

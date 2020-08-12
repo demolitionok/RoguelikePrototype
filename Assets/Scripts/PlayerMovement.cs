@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+    public float dashRange;
     private Vector2 direction;
     private Animator animator;
+    private enum Facing { UP, DOWN, LEFT, RIGHT };
+    private Facing FacingDir = Facing.DOWN;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -36,18 +39,44 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W)) 
         {
             direction += Vector2.up;
-        }
+            FacingDir = Facing.UP;
+}
         if (Input.GetKey(KeyCode.A))
         {
             direction += Vector2.left;
+            FacingDir = Facing.LEFT;
         }
         if (Input.GetKey(KeyCode.S))
         {
             direction += Vector2.down;
+            FacingDir = Facing.DOWN;
         }
         if (Input.GetKey(KeyCode.D))
         {
             direction += Vector2.right;
+            FacingDir = Facing.RIGHT;
+        }
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            Vector2 currentPos = transform.position;
+            Vector2 targetPos = Vector2.zero;
+            if (FacingDir == Facing.UP)
+            {
+                targetPos.y += dashRange;
+            }
+            else if (FacingDir == Facing.DOWN) 
+            {
+                targetPos.y -= dashRange;
+            }
+            else if (FacingDir == Facing.LEFT)
+            {
+                targetPos.x -= dashRange;
+            }
+            else if (FacingDir == Facing.RIGHT)
+            {
+                targetPos.x += dashRange;
+            }
+            transform.Translate(targetPos);
         }
     }
     private void SetAnimatorMovement(Vector2 direction)
