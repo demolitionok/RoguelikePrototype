@@ -10,10 +10,14 @@ public class PlayerStats : MonoBehaviour
     public GameObject player;
 
     public Text healthText;
+    public Text coinText;
     public Slider healthSlider;
 
     public float health;
     public float maxHealth;
+
+    public int coins = 0;
+    public int gems = 0;
 
     private void Awake()
     {
@@ -48,6 +52,24 @@ public class PlayerStats : MonoBehaviour
     {
         healthSlider.value = CalculateHealthPercentage();
         healthText.text = Mathf.Ceil(health).ToString() + " / " + Mathf.Ceil(maxHealth).ToString();
+    }
+    private void SetCoinsUi() 
+    {
+        coinText.text = "Coins:" + coins;
+    }
+    public void PlayerPickupLoot(PickupObject currentObject, int pickupQuantity)
+    {
+        if (currentObject == PickupObject.COIN)
+        {
+            playerStats.coins += pickupQuantity;
+
+        }
+        else if (currentObject == PickupObject.GEM)
+        {
+            playerStats.gems += pickupQuantity;
+
+        }
+        SetCoinsUi();
     }
     private void CheckOverheal()// сделать через сетер
     {
