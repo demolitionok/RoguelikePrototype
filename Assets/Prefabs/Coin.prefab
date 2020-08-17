@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3854140009025679397}
   - component: {fileID: 81867545}
   - component: {fileID: 81867544}
+  - component: {fileID: 2966077765908963123}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -166,3 +167,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentObject: 0
   pickupQuantity: 3
+--- !u!114 &2966077765908963123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3854140009025679394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51098ecfc0322714884b3bd2a9ce0be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3

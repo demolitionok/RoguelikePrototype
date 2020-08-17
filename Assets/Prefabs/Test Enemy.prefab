@@ -409,10 +409,10 @@ MonoBehaviour:
   projectile: {fileID: 8731607031511845993, guid: d92767a95ba375e46ae5008689eee19f,
     type: 3}
   player: {fileID: 0}
-  minDamage: 20
-  maxDamage: 50
+  minDamage: 1
+  maxDamage: 10
   projectileForce: 10
-  cooldown: 1
+  cooldown: 3
 --- !u!1 &5379249872681336024
 GameObject:
   m_ObjectHideFlags: 0
