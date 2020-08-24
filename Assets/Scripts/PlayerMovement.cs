@@ -4,85 +4,24 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed;
-    public float dashRange;
-    private Vector2 direction;
-    private Animator animator;
     private enum Facing { UP, DOWN, LEFT, RIGHT };
-    private Facing FacingDir = Facing.DOWN;
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+
+    public float moveSpeed = 5f;
+    public Animator animator;
+    private Vector2 movement;
+
+    public Rigidbody2D rb;
     private void Update()
     {
-        TakeInput();
-        Move();
-    }
-    private void Move() 
-    {
-        transform.Translate(direction * speed * Time.deltaTime);
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-        if (direction.x != 0 || direction.y != 0)
-        {
-            SetAnimatorMovement(direction);
-        }
-        else 
-        {
-            animator.SetLayerWeight(1, 0);
-        }
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
-    private void TakeInput() 
+    private void FixedUpdate()
     {
-        direction = Vector2.zero;
-
-        if (Input.GetKey(KeyCode.W)) 
-        {
-            direction += Vector2.up;
-            FacingDir = Facing.UP;
-}
-        if (Input.GetKey(KeyCode.A))
-        {
-            direction += Vector2.left;
-            FacingDir = Facing.LEFT;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            direction += Vector2.down;
-            FacingDir = Facing.DOWN;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            direction += Vector2.right;
-            FacingDir = Facing.RIGHT;
-        }
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            Vector2 currentPos = transform.position;
-            Vector2 targetPos = Vector2.zero;
-            if (FacingDir == Facing.UP)
-            {
-                targetPos.y += dashRange;
-            }
-            else if (FacingDir == Facing.DOWN) 
-            {
-                targetPos.y -= dashRange;
-            }
-            else if (FacingDir == Facing.LEFT)
-            {
-                targetPos.x -= dashRange;
-            }
-            else if (FacingDir == Facing.RIGHT)
-            {
-                targetPos.x += dashRange;
-            }
-            transform.Translate(targetPos);
-        }
-    }
-    private void SetAnimatorMovement(Vector2 direction)
-    {
-        animator.SetLayerWeight(1, 1);
-        animator.SetFloat("xDir", direction.x);
-        animator.SetFloat("yDir", direction.y);
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
