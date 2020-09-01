@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Controller
 {
-    public float moveSpeed = 5f;
     public Animator animator;
-    public Vector2 movement;
 
     void Update()
     {
+        moveSpeed = 5f;
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 

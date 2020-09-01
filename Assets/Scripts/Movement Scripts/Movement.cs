@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public PlayerController controller;
+    public Controller controller;
 
     private void Start()
     {

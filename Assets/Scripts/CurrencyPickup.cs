@@ -10,7 +10,6 @@ public class CurrencyPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered");
         if (collision.name == "Player") 
         {
             PlayerStats.playerStats.PlayerPickupLoot(currentObject, pickupQuantity);

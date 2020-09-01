@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
         x = Random.Range(-1, 1);
         y = Random.Range(-1, 1);
         spawnPos.x += x;
-        spawnPos.x += y;
+        spawnPos.y += y;
         Instantiate(Enemies[0], spawnPos, Quaternion.identity);
         yield return new WaitForSeconds(spawnRate);
         StartCoroutine(SpawnTestEnemy());
