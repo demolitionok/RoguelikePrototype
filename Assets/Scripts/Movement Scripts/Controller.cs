@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    public float moveSpeed;
     public Vector2 movement;
 }
