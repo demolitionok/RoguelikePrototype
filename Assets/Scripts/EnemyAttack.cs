@@ -7,6 +7,9 @@ public class EnemyAttack : MonoBehaviour
     protected GameObject player;
     protected virtual void Start()
     {
-        player = FindObjectOfType<PlayerMovement>().gameObject;
+        var pc = FindObjectOfType<PlayerController>();
+        if (pc != null)
+            player = pc.gameObject;
+        
     }
 }

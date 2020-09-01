@@ -33,10 +33,10 @@ public class Enemy : MonoBehaviour
     }
     private void CheckDeath() 
     {
-        if (health <= 0) 
+        if (health <= 0)
         {
-            Destroy(gameObject);
             Instantiate(lootDrop, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
     private void CheckOverheal() 
