@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     public Slider healthBarSlider;
 
     public GameObject lootDrop;
-
+    
     void Start()
     {
         health = maxHealth;

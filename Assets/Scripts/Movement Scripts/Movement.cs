@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Controller controller;
+    public float moveSpeed = 3f;
 
     private void Start()
     {

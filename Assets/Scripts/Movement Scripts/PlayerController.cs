@@ -8,8 +8,6 @@ public class PlayerController : Controller
 
     void Update()
     {
-        moveSpeed = 5f;
-
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
