@@ -830,7 +830,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {x: 0, y: 0}
-  animator: {fileID: 795549596}
+--- !u!114 &795549594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795549590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8bc59f8d0db3547bfdf30463cfb0d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!95 &795549596 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7519033923809461683, guid: e0834f4765821a14f92f1878b1a2e3b2,
