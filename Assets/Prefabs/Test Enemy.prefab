@@ -206,8 +206,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 5.999998, y: 0}
-  m_SizeDelta: {x: 2, y: 0}
+  m_AnchoredPosition: {x: 2.5, y: 0}
+  m_SizeDelta: {x: -5.0000305, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5301605189678417037
 GameObject:
@@ -388,10 +388,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14acd2a40fe54dc468f49100c83f0037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  OnHpChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
   maxHealth: 100
-  healthBar: {fileID: 5379249872681336024}
-  healthBarSlider: {fileID: 0}
+  healthBarSlider: {fileID: 7056157408853162910}
   lootDrop: {fileID: 3854140009025679394, guid: 36e0cd7c6a18f314dac2a68287a7d55d,
     type: 3}
 --- !u!114 &3255638523989052231
@@ -408,7 +412,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 8731607031511845993, guid: d92767a95ba375e46ae5008689eee19f,
     type: 3}
-  player: {fileID: 0}
   minDamage: 1
   maxDamage: 10
   projectileForce: 10
@@ -423,6 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4071775083952976371}
   - component: {fileID: 7056157408853162910}
+  - component: {fileID: 609854317}
   m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
@@ -498,10 +502,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.92
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &609854317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5379249872681336024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb12a63cf65a4b4c9e8eb0f5a452b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7129942593669013202
 GameObject:
   m_ObjectHideFlags: 0
